@@ -1,0 +1,24 @@
+vi:
+  base_title: "Thư viện sách online"
+  layouts:
+    header:
+      english: "Tiếng Anh"
+      vietnam: "Tiếng Việt"
+      login: "Đăng nhập"
+      cart: "Giỏ sách"
+      search: "Tìm kiếm"
+      home: "Trang chủ"
+    footer:
+      address: "Địa chỉ"
+      email: "Sun@email.com"
+      phone: "Số điện thoại"
+      contact: "Liên hệ"
+      about_us: "Về chúng tôi"
+      term: "Điều khoản và chính sách"
+      contact_us: "Liên hệ với chúng tôi"
+      help: "Trợ giúp"
+      infor: "Thông tin"
+      got_question: "Bạn có thắc mắc! Liên hệ"
+  books:
+    index:
+      title: "Thư viện"
