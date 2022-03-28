@@ -1,0 +1,2 @@
+class BorrowedRequest < ApplicationRecord
+end
