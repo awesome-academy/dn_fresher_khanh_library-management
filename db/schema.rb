@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_28_084630) do
+ActiveRecord::Schema.define(version: 2022_03_29_050844) do
+
+  create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", charset: "utf8mb4", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.string "service_name", null: false
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "active_storage_variant_records", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "blob_id", null: false
+    t.string "variation_digest", null: false
+    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
 
   create_table "authors", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -37,13 +65,13 @@ ActiveRecord::Schema.define(version: 2022_03_28_084630) do
     t.bigint "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
     t.bigint "category_id"
     t.bigint "publisher_id"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["category_id"], name: "index_books_on_category_id"
-    t.index ["name", "user_id"], name: "index_books_on_name_and_user_id"
+    t.index ["name", "author_id"], name: "index_books_on_name_and_author_id"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
-    t.index ["user_id"], name: "index_books_on_user_id"
   end
 
   create_table "borrowed_requests", charset: "utf8mb4", force: :cascade do |t|
@@ -103,11 +131,13 @@ ActiveRecord::Schema.define(version: 2022_03_28_084630) do
     t.index ["email"], name: "index_users_on_email"
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "book_requests", "books"
   add_foreign_key "book_requests", "borrowed_requests"
+  add_foreign_key "books", "authors"
   add_foreign_key "books", "categories"
   add_foreign_key "books", "publishers"
-  add_foreign_key "books", "users"
   add_foreign_key "borrowed_requests", "users"
   add_foreign_key "reactions", "books"
   add_foreign_key "reactions", "users"
