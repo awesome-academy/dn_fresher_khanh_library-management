@@ -5,8 +5,10 @@ ruby "2.7.0"
 
 gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
+gem "cloudinary", "~> 1.22"
 gem "config"
 gem "faker", "2.1.2"
+gem "image_processing", "~> 1.12", ">= 1.12.2"
 gem "jbuilder", "~> 2.7"
 gem "mysql2", "~> 0.5"
 gem "puma", "~> 5.0"

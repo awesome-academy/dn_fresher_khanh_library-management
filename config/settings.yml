@@ -1,0 +1,26 @@
+validation:
+  user:
+    maximum_name_50: 50
+    maximum_email_255: 255
+    valid_email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
+    minimum_password_6: 6
+  book:
+    maximum_name_100: 100
+    maximum_detail_2000: 2000
+    image_content_type: ["image/jpeg", "image/gif", "image/png"]
+    image_content_type_message: "must be a valid image format"
+    image_size: 5
+    image_size_message: "should be less than 5MB"
+  category:
+    maximum_name_50: 50
+  publisher:
+    maximum_name_50: 50
+  author:
+    maximum_name_50: 50
+    maximum_detail_2000: 2000
+    image_content_type: ["image/jpeg", "image/gif", "image/png"]
+    image_content_type_message: "must be a valid image format"
+    image_size: 5
+    image_size_message: "should be less than 5MB"
+  review:
+    maximum_content_2000: 2000
