@@ -19,6 +19,12 @@ vi:
       help: "Trợ giúp"
       infor: "Thông tin"
       got_question: "Bạn có thắc mắc! Liên hệ"
+      quote: "Cập nhật thông tin từ chúng tôi"
   books:
     index:
       title: "Thư viện"
+      feature: "Sách mới"
+    sidebar:
+      category: "Danh mục sách"
+    book:
+      add_to_cart: "Thêm vào giỏ sách"

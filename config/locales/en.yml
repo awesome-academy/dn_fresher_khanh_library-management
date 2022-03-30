@@ -19,6 +19,12 @@ en:
       help: "Help"
       infor: "Information"
       got_question: "Got question! Please contact"
+      quote: "Get the most recent updates from our site"
   books:
     index:
       title: "Library"
+      feature: "Popular books"
+    sidebar:
+      category: "Category"
+    book:
+      add_to_cart: "Add to cart"

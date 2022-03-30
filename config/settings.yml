@@ -24,3 +24,5 @@ validation:
     image_size_message: "should be less than 5MB"
   review:
     maximum_content_2000: 2000
+pagy:
+  items_12: 12
