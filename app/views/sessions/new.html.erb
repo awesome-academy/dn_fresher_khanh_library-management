@@ -1,0 +1,26 @@
+<% provide :title, t(".title") %>
+
+<section id="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-1">
+        <div class="login-form">
+          <h2><%= t ".title" %></h2>
+
+          <%= form_for :session, url: login_path do |f| %>
+            <%= f.email_field :email, placeholder: t(".email") %>
+
+            <%= f.password_field :password, placeholder: t(".password") %>
+
+            <span>
+              <%= f.check_box :remember_me, class: "checkbox" %>
+              <%= t ".remember_me" %>
+            </span>
+
+            <%= f.submit t(".submit_button"), class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

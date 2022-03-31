@@ -1,10 +1,14 @@
 vi:
   base_title: "Thư viện sách online"
+  flash:
+    session:
+      create_fail: "Email/Mật khẩu không hợp lệ"
   layouts:
     header:
       english: "Tiếng Anh"
       vietnam: "Tiếng Việt"
       login: "Đăng nhập"
+      logout: "Đăng xuất"
       cart: "Giỏ sách"
       search: "Tìm kiếm"
       home: "Trang chủ"
@@ -18,7 +22,14 @@ vi:
       contact_us: "Liên hệ với chúng tôi"
       help: "Trợ giúp"
       infor: "Thông tin"
-      got_question: "Bạn có thắc mắc! Liên hệ"
+      got_question: "Bạn có thắc mắc? Liên hệ"
+  sessions:
+    new:
+      title: "Đăng nhập"
+      email: "Email"
+      password: "Mật khẩu"
+      remember_me: "Duy trì đăng nhập"
+      submit_button: "Đăng nhập"
   books:
     index:
       title: "Thư viện"
