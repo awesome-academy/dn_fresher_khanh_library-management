@@ -1,49 +1,61 @@
 <header id="header"><!--header-->
-    <div class="header-middle"><!--header-middle-->
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="btn-group pull-left">
-              <div class="btn-group">
-                <%= link_to t(".english"), {locale: :en}, {class: "btn btn-default eng"} %>
-              </div>
-              <div class="btn-group">
-                <%= link_to t(".vietnam"), {locale: :vi}, {class: "btn btn-default eng"} %>
-               </div>
+  <div class="header-middle"><!--header-middle-->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="btn-group pull-left">
+            <div class="btn-group">
+              <%= link_to t(".english"), {locale: :en}, {class: "btn btn-default eng"} %>
             </div>
-          </div>
-          <div class="col-sm-8">
-            <div class="shop-menu pull-right">
-              <ul class="nav navbar-nav">
-                <li>
-                  <a href="cart.html"><i class="fa fa-shopping-cart"></i><%= t ".cart" %></a>
-                </li>
-                <li>
-                  <a href="login.html"><i class="fa fa-lock"></i><%= t ".login" %></a>
-                </li>
-              </ul>
+            <div class="btn-group">
+              <%= link_to t(".vietnam"), {locale: :vi}, {class: "btn btn-default eng"} %>
             </div>
           </div>
         </div>
+        <div class="col-sm-8">
+          <div class="shop-menu pull-right">
+            <ul class="nav navbar-nav">
+              <% if logged_in? %>
+                <li>
+                  <%= link_to "#" do %>
+                    <i class="fa fa-shopping-cart"></i>
+                    <%= t ".cart" %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to t(".logout"), logout_path %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to login_path do %>
+                    <i class="fa fa-lock"></i>
+                    <%= t ".login" %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div><!--/header-middle-->
+    </div>
+  </div><!--/header-middle-->
 
-    <div class="header-bottom"><!--header-bottom-->
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-9">
-            <div class="mainmenu pull-left">
-              <ul class="nav navbar-nav collapse navbar-collapse">
-                <li><a href="index.html" class="active"><%= t ".home" %></a></li>
-              </ul>
-            </div>
+  <div class="header-bottom"><!--header-bottom-->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="mainmenu pull-left">
+            <ul class="nav navbar-nav collapse navbar-collapse">
+              <li><a href="index.html" class="active"><%= t ".home" %></a></li>
+            </ul>
           </div>
-          <div class="col-sm-3">
-            <div class="search_box pull-right">
-              <input type="text" placeholder=<%= t ".search" %> />
-            </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="search_box pull-right">
+            <input type="text" placeholder=<%= t ".search" %> />
           </div>
         </div>
       </div>
-    </div><!--/header-bottom-->
-  </header><!--/header-->
+    </div>
+  </div><!--/header-bottom-->
+</header><!--/header-->
