@@ -1,10 +1,14 @@
 en:
   base_title: "Books Library"
+  flash:
+    session:
+      create_fail: "Invalid email/password combination"
   layouts:
     header:
       english: "English"
       vietnam: "Vietnamese"
-      login: "Login"
+      login: "Log in"
+      logout: "Log out"
       cart: "Cart"
       search: "Search"
       home: "Home"
@@ -18,7 +22,14 @@ en:
       contact_us: "Contact us"
       help: "Help"
       infor: "Information"
-      got_question: "Got question! Please contact"
+      got_question: "Got question? Please contact"
+  sessions:
+    new:
+      title: "Log in"
+      email: "Email"
+      password: "Password"
+      remember_me: "Keep me signed in"
+      submit_button: "Log in"
   books:
     index:
       title: "Library"
