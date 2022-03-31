@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  scope :available, ->{where "amount > 0"}
+
   has_many :book_requests, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :reactions, dependent: :destroy
