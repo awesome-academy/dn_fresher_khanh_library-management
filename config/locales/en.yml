@@ -1,8 +1,11 @@
 en:
+  date_format: "%m.%d.%Y"
   base_title: "Books Library"
   flash:
     session:
       create_fail: "Invalid email/password combination"
+    borrowed_request:
+      not_admin: "You are not an admin"
   layouts:
     header:
       english: "English"
@@ -12,6 +15,7 @@ en:
       cart: "Cart"
       search: "Search"
       home: "Home"
+      requests: "Requests"
     footer:
       address: "Address"
       email: "Sun@email.com"
@@ -33,3 +37,12 @@ en:
   books:
     index:
       title: "Library"
+  admin:
+    borrowed_requests:
+      borrowed_request:
+        status: "Status: "
+        borrowed_date: "Borrowed date: "
+        returned_date: "Returned date: "
+        books: "Books: "
+      index:
+        title: "Requests"

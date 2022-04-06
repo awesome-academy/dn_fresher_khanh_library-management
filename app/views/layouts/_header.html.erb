@@ -46,7 +46,12 @@
         <div class="col-sm-9">
           <div class="mainmenu pull-left">
             <ul class="nav navbar-nav collapse navbar-collapse">
-              <li><a href="index.html" class="active"><%= t ".home" %></a></li>
+              <li>
+                <%= link_to t(".home"), root_path, class: "active" %>
+              </li>
+              <li>
+                <%= link_to t(".requests"), admin_borrowed_requests_path, class: "active" %>
+              </li>
             </ul>
           </div>
         </div>

@@ -1,8 +1,11 @@
 vi:
+  date_format: "%d.%m.%Y"
   base_title: "Thư viện sách online"
   flash:
     session:
       create_fail: "Email/Mật khẩu không hợp lệ"
+    borrowed_request:
+      not_admin: "Bạn không phải quản trị viên"
   layouts:
     header:
       english: "Tiếng Anh"
@@ -12,6 +15,7 @@ vi:
       cart: "Giỏ sách"
       search: "Tìm kiếm"
       home: "Trang chủ"
+      requests: "Yêu cầu"
     footer:
       address: "Địa chỉ"
       email: "Sun@email.com"
@@ -33,3 +37,12 @@ vi:
   books:
     index:
       title: "Thư viện"
+  admin:
+    borrowed_requests:
+      borrowed_request:
+        status: "Trạng thái: "
+        borrowed_date: "Ngày mượn: "
+        returned_date: "Ngày trả: "
+        books: "Sách mượn: "
+      index:
+        title: "Yêu cầu mượn"
