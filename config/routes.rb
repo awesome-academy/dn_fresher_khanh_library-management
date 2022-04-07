@@ -7,5 +7,9 @@ Rails.application.routes.draw do
     get "/logout", to: "sessions#destroy"
 
     resources :books
+
+    namespace :admin do
+      resources :borrowed_requests, only: :index
+    end
   end
 end
