@@ -5,6 +5,13 @@ vi:
     session:
       create_fail: "Email/Mật khẩu không hợp lệ"
     borrowed_request:
+      accept_success: "Xác nhận yêu cầu thành công"
+      accept_fail: "Xác nhận yêu cầu thất bại"
+      reject_success: "Từ chối yêu cầu thành công"
+      reject_fail: "Từ chối yêu cầu thất bại"
+      return_success: "Xác nhận đã trả thành công"
+      return_fail: "Xác nhận đã trả thất bại"
+      not_found: "Yêu cầu không tồn tại"
       not_admin: "Bạn không phải quản trị viên"
   layouts:
     header:
@@ -44,5 +51,11 @@ vi:
         borrowed_date: "Ngày mượn: "
         returned_date: "Ngày trả: "
         books: "Sách mượn: "
+      accept:
+        submit_button: "Xác nhận"
+      reject:
+        submit_button: "Từ chối"
+      return:
+        submit_button: "Xác nhận trả"
       index:
         title: "Yêu cầu mượn"
