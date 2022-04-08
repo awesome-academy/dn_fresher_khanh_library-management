@@ -5,6 +5,13 @@ en:
     session:
       create_fail: "Invalid email/password combination"
     borrowed_request:
+      accept_success: "Accept request successfully"
+      accept_fail: "Accept request failed"
+      reject_success: "Reject request successfully"
+      reject_fail: "Reject request failed"
+      return_success: "Returned successfully"
+      return_fail: "Returned failed"
+      not_found: "Request does not exist"
       not_admin: "You are not an admin"
   layouts:
     header:
@@ -44,5 +51,11 @@ en:
         borrowed_date: "Borrowed date: "
         returned_date: "Returned date: "
         books: "Books: "
+      accept:
+        submit_button: "Accept"
+      reject:
+        submit_button: "Reject"
+      return:
+        submit_button: "Return"
       index:
         title: "Requests"

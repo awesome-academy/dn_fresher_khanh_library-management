@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     resources :books
 
     namespace :admin do
-      resources :borrowed_requests, only: :index
+      resources :borrowed_requests, only: :index do
+        collection do
+          put :handle_status
+        end
+      end
     end
   end
 end

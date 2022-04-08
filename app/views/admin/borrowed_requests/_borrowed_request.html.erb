@@ -30,4 +30,11 @@
 
   <%= t ".books" %>
   <%= render borrowed_request.book_requests %>
+
+  <% if borrowed_request.requested? %>
+    <%= render "accept", request: borrowed_request %>
+    <%= render "reject", request: borrowed_request %>
+  <% elsif borrowed_request.borrowing? %>
+    <%= render "return", request: borrowed_request %>
+  <% end %>
 </div>
