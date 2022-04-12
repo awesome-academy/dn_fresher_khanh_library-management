@@ -8,9 +8,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
-  font-weight:400px;
 }
 
 ul li {
@@ -204,7 +202,6 @@ a#scrollUp i{
   font-size: 14px;
   font-weight: 300;
   padding:0;
-  padding-right: 0;
   margin-top: 10px;
 }
 
@@ -263,7 +260,6 @@ a#scrollUp i{
   outline: medium none;
   padding-left: 10px;
   width: 155px;
-  background-image: url(../images/home/searchicon.png);
   background-repeat: no-repeat;
   background-position: 130px;
 }
@@ -899,7 +895,6 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
 }
 
 .single-products:hover .product-overlay {
@@ -2018,8 +2013,10 @@ h2.title {
 .blog-post-area 
 .post-meta {
   display: block;
-  margin-bottom: 25px;
+  margin-top: 30px;
+  margin-bottom: 10px;
   overflow: hidden;
+  border-bottom: 2px;
 }
 
 .blog-post-area 
@@ -2141,7 +2138,6 @@ h2.title {
 
 .rating-area {
   border: 1px solid #F7F7F0;
-  direction: block;
   overflow: hidden;
 }
 

@@ -1,0 +1,26 @@
+<div class="left-sidebar">
+  <h2><%= t ".category" %></h2>
+  <div class="panel-group category-products" id="accordian">
+    <div class="panel panel-default">
+      <% category_level_1.each_with_index do |category, index| %>
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordian" href="#<%= index %>">
+              <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+              <%= category.name %>
+            </a>
+          </h4>
+        </div>
+        <div id="<%= index %>" class="panel-collapse collapse">
+          <div class="panel-body">
+            <ul>
+              <% category.subordinates.each do |sub_category| %>
+                <li><a href="#"><%= sub_category.name %></a></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

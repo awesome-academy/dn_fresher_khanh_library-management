@@ -5,6 +5,8 @@ class Category < ApplicationRecord
 
   belongs_to :parent, class_name: Category.name, optional: true
 
+  scope :level_1, ->{where parent_id: nil}
+
   validates :name, presence: true,
             length: {maximum: Settings.validation.category.maximum_name_50}
 end

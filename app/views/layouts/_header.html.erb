@@ -49,9 +49,11 @@
               <li>
                 <%= link_to t(".home"), root_path, class: "active" %>
               </li>
-              <li>
-                <%= link_to t(".requests"), admin_borrowed_requests_path, class: "active" %>
-              </li>
+              <% if current_user&.role %>
+                <li>
+                  <%= link_to t(".requests"), admin_borrowed_requests_path, class: "active" %>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>

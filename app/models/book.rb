@@ -9,6 +9,8 @@ class Book < ApplicationRecord
 
   has_one_attached :image
 
+  scope :available, ->{where "amount > 0"}
+
   validates :name, presence: true,
             length: {maximum: Settings.validation.book.maximum_name_100}
 
