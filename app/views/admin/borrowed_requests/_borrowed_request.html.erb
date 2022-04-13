@@ -1,15 +1,12 @@
 <div class="post-meta">
   <ul>
     <li>
-      <i class="fa fa-user"></i>
       <%= link_to borrowed_request.user_name, "#" %>
     </li>
     <li>
-      <i class="fa fa-clock-o"></i>
       <%= borrowed_request.created_at.strftime("%I:%M%p") %>
     </li>
     <li>
-      <i class="fa fa-calendar"></i>
       <%= borrowed_request.created_at.strftime(t "date_format") %>
     </li>
   </ul>

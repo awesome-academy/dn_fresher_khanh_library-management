@@ -44,6 +44,12 @@ en:
   books:
     index:
       title: "Library"
+      feature: "New books"
+    sidebar:
+      category: "Category"
+    book:
+      qty: "Quantity: "
+      add_to_cart: "Add to cart"
   admin:
     borrowed_requests:
       borrowed_request:

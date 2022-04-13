@@ -26,3 +26,4 @@ validation:
     maximum_content_2000: 2000
 pagy:
   requests_items: 10
+  books_items: 12

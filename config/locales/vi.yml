@@ -44,6 +44,12 @@ vi:
   books:
     index:
       title: "Thư viện"
+      feature: "Sách mới"
+    sidebar:
+      category: "Danh mục sách"
+    book:
+      qty: "Số lượng: "
+      add_to_cart: "Thêm vào giỏ sách"
   admin:
     borrowed_requests:
       borrowed_request:

@@ -12,7 +12,7 @@ class Admin::BorrowedRequestsController < ApplicationController
     begin
       @request.send "#{name}_request"
       flash[:success] = t "flash.borrowed_request.#{name}_success"
-    rescue
+    rescue StandardError
       flash[:warning] = t "flash.borrowed_request.#{name}_fail"
     ensure
       redirect_to admin_borrowed_requests_url
