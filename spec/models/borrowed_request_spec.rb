@@ -43,15 +43,39 @@ RSpec.describe BorrowedRequest, type: :model do
     let!(:book_request) {FactoryBot.create :book_request, book_id: book.id, borrowed_request_id: request.id}
 
     context "accept request" do
-      it "should decrease book amount" do
+      before do
         request.accept_request
+      end
+
+      it "should borrowing" do
+        expect(request.borrowing?).to eq true
+      end
+
+      it "should decrease book amount" do
         expect(book.amount).to eq 1
       end
     end
 
+    context "reject request" do
+      before do
+        request.reject_request
+      end
+
+      it "should rejected" do
+        expect(request.rejected?).to eq true
+      end
+    end
+
     context "return request" do
-      it "should increase book amount" do
+      before do
         request.return_request
+      end
+
+      it "should returned" do
+        expect(request.returned?).to eq true
+      end
+
+      it "should increase book amount" do
         expect(book.amount).to eq 2
       end
     end

@@ -30,7 +30,7 @@ class Admin::BorrowedRequestsController < ApplicationController
   end
 
   def admin_user
-    return if current_user.role
+    return if current_user&.admin?
 
     flash[:warning] = t "flash.borrowed_request.not_admin"
     redirect_to root_url
