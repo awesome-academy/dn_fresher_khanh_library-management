@@ -20,6 +20,8 @@ class User < ApplicationRecord
             length: {minimum: Settings.validation.user.minimum_password_6},
             allow_nil: true
 
+  enum role: {reader: 0, admin: 1}
+
   def self.new_token
     SecureRandom.urlsafe_base64
   end
