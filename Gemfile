@@ -9,6 +9,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "cloudinary", "~> 1.22"
 gem "config"
+gem "devise"
 gem "faker", "2.1.2"
 gem "image_processing", "~> 1.12", ">= 1.12.2"
 gem "jbuilder", "~> 2.7"
@@ -26,11 +27,11 @@ gem "webpacker", "~> 5.0"
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "factory_bot_rails"
+  gem "pry"
   gem "rspec-rails"
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
-  gem "pry"
 end
 
 group :development do

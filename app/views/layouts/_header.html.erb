@@ -15,7 +15,7 @@
         <div class="col-sm-8">
           <div class="shop-menu pull-right">
             <ul class="nav navbar-nav">
-              <% if logged_in? %>
+              <% if user_signed_in? %>
                 <li>
                   <%= link_to "#" do %>
                     <i class="fa fa-shopping-cart"></i>
@@ -23,13 +23,19 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to t(".logout"), logout_path %>
+                  <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
                 </li>
               <% else %>
                 <li>
-                  <%= link_to login_path do %>
+                  <%= link_to new_user_session_path do %>
                     <i class="fa fa-lock"></i>
                     <%= t ".login" %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_user_registration_path do %>
+                    <i class="fa fa-lock"></i>
+                    <%= t ".signup" %>
                   <% end %>
                 </li>
               <% end %>

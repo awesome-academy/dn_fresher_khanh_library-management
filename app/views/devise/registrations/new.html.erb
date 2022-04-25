@@ -1,0 +1,28 @@
+<% provide :title, t(".title") %>
+
+<section id="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-1">
+        <div class="signup-form">
+          <h2><%= t ".title" %></h2>
+
+          <%= form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <%= f.text_field :name, placeholder: t(".name"), autofocus: true %>
+
+            <%= f.email_field :email, placeholder: t(".email") %>
+
+            <%= f.password_field :password, placeholder: t(".password") %>
+
+            <%= f.password_field :password_confirmation, placeholder: t(".password_confirm") %>
+
+            <%= f.submit t(".submit_button"), class: "btn btn-primary" %>
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
