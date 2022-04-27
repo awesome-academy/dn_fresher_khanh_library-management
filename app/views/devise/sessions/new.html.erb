@@ -7,18 +7,22 @@
         <div class="login-form">
           <h2><%= t ".title" %></h2>
 
-          <%= form_for :session, url: login_path do |f| %>
-            <%= f.email_field :email, placeholder: t(".email") %>
+          <%= form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
+            <%= f.email_field :email, placeholder: t(".email"), autofocus: true %>
 
             <%= f.password_field :password, placeholder: t(".password") %>
 
-            <span>
-              <%= f.check_box :remember_me, class: "checkbox" %>
-              <%= t ".remember_me" %>
-            </span>
+            <% if devise_mapping.rememberable? %>
+              <span>
+                <%= f.check_box :remember_me, class: "checkbox" %>
+                <%= t ".remember_me" %>
+              </span>
+            <% end %>
 
             <%= f.submit t(".submit_button"), class: "btn btn-primary" %>
           <% end %>
+
+          <%= render "devise/shared/links" %>
         </div>
       </div>
     </div>
