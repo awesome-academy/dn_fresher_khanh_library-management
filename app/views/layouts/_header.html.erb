@@ -55,7 +55,7 @@
               <li>
                 <%= link_to t(".home"), root_path, class: "active" %>
               </li>
-              <% if current_user&.admin? %>
+              <% if can? :read, BorrowedRequest %>
                 <li>
                   <%= link_to t(".requests"), admin_borrowed_requests_path, class: "active" %>
                 </li>
