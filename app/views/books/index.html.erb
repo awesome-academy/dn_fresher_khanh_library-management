@@ -9,7 +9,9 @@
       <div class="col-sm-9 padding-right">
         <div class="features_items">
           <h2 class="title text-center"><%= t ".feature" %></h2>
+
           <%= render @books %>
+
           <%== pagy_bootstrap_nav @pagy %>
         </div>
       </div>

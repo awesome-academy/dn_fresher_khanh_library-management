@@ -1,5 +1,4 @@
 require "rails_helper"
-include SessionsHelper
 
 RSpec.describe Admin::BorrowedRequestsController, type: :controller do
   describe "GET index" do
@@ -10,7 +9,7 @@ RSpec.describe Admin::BorrowedRequestsController, type: :controller do
 
     context "when admin" do
       before do
-        log_in admin
+        sign_in admin
         get :index
       end
 
@@ -22,21 +21,6 @@ RSpec.describe Admin::BorrowedRequestsController, type: :controller do
         expect(assigns(:requests)).to eq [request_2, request_1]
       end
     end
-
-    context "when not admin" do
-      before do
-        log_in user
-        get :index
-      end
-
-      it "should flash warning" do
-        expect(flash[:warning]).to eq I18n.t "flash.borrowed_request.not_admin"
-      end
-
-      it "should render root" do
-        expect(response).to redirect_to root_path
-      end
-    end
   end
 
   describe "PUT handle_status" do
@@ -46,7 +30,7 @@ RSpec.describe Admin::BorrowedRequestsController, type: :controller do
 
     context "when success" do
       before do
-        log_in admin
+        sign_in admin
         put :handle_status, params: {id: request.id, name: "accept"}
       end
 
@@ -61,32 +45,14 @@ RSpec.describe Admin::BorrowedRequestsController, type: :controller do
 
     context "when not find request" do
       before do
-        log_in admin
-        put :handle_status, params: {id: -1, name: "accept"}
+        sign_in admin
       end
 
-      it "should flash warning" do
-        expect(flash[:warning]).to eq I18n.t "flash.borrowed_request.not_found"
+      it "should raise error" do
+        expect{
+          put :handle_status, params: {id: -1, name: "accept"}
+        }.to raise_error(ActiveRecord::RecordNotFound)
       end
-
-      # it "should reload" do
-      #   expect(response).to redirect_to admin_borrowed_requests_path
-      # end
-    end
-
-    context "when not admin" do
-      before do
-        log_in user
-        put :handle_status, params: {id: request.id, name: "accept"}
-      end
-
-      it "should flash warning" do
-        expect(flash[:warning]).to eq I18n.t "flash.borrowed_request.not_admin"
-      end
-
-      # it "should render root" do
-      #   expect(response).to redirect_to(root_path)
-      # end
     end
   end
 end
